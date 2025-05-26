@@ -40,11 +40,12 @@ test_data_transformed = pca.transform(test_data)
 
 # Pass Test Data for Prediction 
 labels = model.predict(test_data_transformed) # predict returns labels: Index of the cluster each sample belongs to.
-
-print(cluster_to_fruit)
-
+labels_fruit = []
 
 for i in labels:
-    print(cluster_to_fruit[i])
+    labels_fruit.append(cluster_to_fruit[i])
 
-print(labels)
+# Save in a new Test Data results file
+# pd.DataFrame['fruit'] = labels_fruit
+
+print(labels_fruit)
